@@ -6,8 +6,8 @@ public class SingliLinkedList {
         private int data;
         private Node next;
 
-        public Node(int x){
-            this.data = x;
+        public Node(int data){
+            this.data = data;
             this.next = null;
         }
     }
