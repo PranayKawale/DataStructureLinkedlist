@@ -55,16 +55,28 @@ public class SingliLinkedList {
             head = temp;
         }
     }
-
+    //Add nodes to the list at End
+    public void addToEnd(int x){
+        Node node = new Node(x);
+        if (head == null){
+            this.head = node;
+        }else{
+            Node temp = head;
+            while (temp.next != null){
+                temp = temp.next;
+            }
+            temp.next = node;
+        }
+    }
 
 
     public static void main(String[] args) {
         SingliLinkedList slList = new SingliLinkedList();
 
         //Add nodes to the list at Beginning
-        slList.addToBegin(70);
-        slList.addToBegin(30);
-        slList.addToBegin(56);
+        slList.addToEnd(70);
+        slList.addToEnd(30);
+        slList.addToEnd(56);
 
 
         //Call the Displays Method
