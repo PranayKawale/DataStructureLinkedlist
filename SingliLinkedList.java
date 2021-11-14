@@ -95,19 +95,31 @@ public class SingliLinkedList {
     }
 
     
+    //Remove nodes to the Ending
+    public void remNodeAtEnd(){
+        if (head == null && head.next == null){
+            return;
+        }
+        Node temp = head;
+        while (temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
+
 
     public static void main(String[] args) {
         SingliLinkedList slList = new SingliLinkedList();
 
         //Add nodes to the list at End
         slList.addToEnd(56);
+        slList.addToEnd(30);
         slList.addToEnd(70);
 
-        //Add nodes to the given pos
-        slList.addAtPos(2, 30, slList.head);
+
 
         //Remove nodes to the Beginning
-        slList.remNodeAtBegn();
+        slList.remNodeAtEnd();
 
         //Call the Displays Method
         slList.displayList();
