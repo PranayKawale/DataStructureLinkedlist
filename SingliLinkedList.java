@@ -85,6 +85,16 @@ public class SingliLinkedList {
         temp2.next = temp.next;
         temp.next = temp2;
     }
+    
+    //Remove nodes to the Beginning
+    public void remNodeAtBegn(){
+        if (head == null){
+        }else {
+            head = head.next;
+        }
+    }
+
+    
 
     public static void main(String[] args) {
         SingliLinkedList slList = new SingliLinkedList();
@@ -96,6 +106,8 @@ public class SingliLinkedList {
         //Add nodes to the given pos
         slList.addAtPos(2, 30, slList.head);
 
+        //Remove nodes to the Beginning
+        slList.remNodeAtBegn();
 
         //Call the Displays Method
         slList.displayList();
