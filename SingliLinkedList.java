@@ -131,9 +131,8 @@ public class SingliLinkedList {
         slList.addToEnd(70);
 
 
-
-        //Search nodes to the Beginning to End
-        slList.searchNode(30);
+        //Search nodes to the Given Position
+        slList.addAtPos(3, 40, slList.head);
 
         //Call the Displays Method
         slList.displayList();
