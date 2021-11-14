@@ -122,17 +122,38 @@ public class SingliLinkedList {
     }
 
 
+    public void remNodeAtPos(int pos, int target, Node head){
+        Node temp = head;
+        Node prev = head;
+        if (temp != null && temp.data == target){
+            temp = temp.next;
+            return;
+        }
+        while (temp != null && temp.data != target){
+            prev = temp;
+            temp = temp.next;
+        }
+        prev.next = temp.next;
+        if (temp == null)
+            return;
+    }
+
+
     public static void main(String[] args) {
         SingliLinkedList slList = new SingliLinkedList();
 
         //Add nodes to the list at End
         slList.addToEnd(56);
         slList.addToEnd(30);
-        slList.addToEnd(70);
+        slList.addToEnd(40);
+
 
 
         //Search nodes to the Given Position
-        slList.addAtPos(3, 40, slList.head);
+        slList.addAtPos(4, 70, slList.head);
+
+        //Search nodes to the Given Position and Deleted the Node
+        slList.remNodeAtPos(3, 40, slList.head);
 
         //Call the Displays Method
         slList.displayList();
