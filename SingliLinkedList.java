@@ -138,6 +138,31 @@ public class SingliLinkedList {
             return;
     }
 
+  //Nodes size
+    public int size(){
+        Node temp = head;
+        int i = 0;
+        while (temp != null){
+            i++;
+            temp = temp.next;
+        }
+        return i;
+    }
+
+    //Sorting using bubble sort
+    public void sort(){
+        for (Node i = head; i.next != null; i = i.next){
+            for (Node j = head; j.next != null; j = j.next){
+                if (j.data > i.next.data){
+                    int temp = j.data;
+                    j.data = j.next.data;
+                    j.next.data = temp;
+                }
+            }
+        }
+    }
+
+
 
     public static void main(String[] args) {
         SingliLinkedList slList = new SingliLinkedList();
@@ -149,14 +174,25 @@ public class SingliLinkedList {
 
 
 
+
         //Search nodes to the Given Position
         slList.addAtPos(4, 70, slList.head);
 
         //Search nodes to the Given Position and Deleted the Node
         slList.remNodeAtPos(3, 40, slList.head);
 
+        slList.addToEnd(40);
+
+        //Sorting using bubble sort
+        slList.sort();
+
         //Call the Displays Method
         slList.displayList();
+
+        System.out.println("Size of the Above Linked List is "+slList.size());
+
+
+
 
 
     }
