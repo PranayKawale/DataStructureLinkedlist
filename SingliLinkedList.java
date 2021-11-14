@@ -69,19 +69,37 @@ public class SingliLinkedList {
         }
     }
 
+    public Node getHead(){
+        return head;
+    }
+
+    public void addAtPos(int pos, int x, Node head) {
+        Node temp = head;
+        Node temp2 = new Node(x);
+        temp2.next = null;
+        pos--;
+        while (pos != 1){
+            temp = temp.next;
+            pos--;
+        }
+        temp2.next = temp.next;
+        temp.next = temp2;
+    }
 
     public static void main(String[] args) {
         SingliLinkedList slList = new SingliLinkedList();
 
-        //Add nodes to the list at Beginning
-        slList.addToEnd(70);
-        slList.addToEnd(30);
+        //Add nodes to the list at End
         slList.addToEnd(56);
+        slList.addToEnd(70);
+
+        //Add nodes to the given pos
+        slList.addAtPos(2, 30, slList.head);
 
 
         //Call the Displays Method
         slList.displayList();
+
+
     }
 }
-
-
